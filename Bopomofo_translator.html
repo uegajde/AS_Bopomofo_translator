@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+        function translate(original, channl)
+        {
+            var input = original.value.toLowerCase();
+            var output = "";
+            var input_unit;
+            for (var i = 0; i < input.length; i++)
+            {
+                input_unit = input.substr(i, 1);
+                output = output + translate_core(input_unit);
+            }
+            document.getElementById("output").innerHTML = output;
+            return true;
+        }
+        function translate_core(input)
+        {
+            var output = input;
+            if (input == "1") { output = "ㄅ"; } if (input == "q") { output = "ㄆ"; } if (input == "a") { output = "ㄇ"; }
+            if (input == "z") { output = "ㄈ"; } if (input == "2") { output = "ㄉ"; } if (input == "w") { output = "ㄊ"; }
+            if (input == "s") { output = "ㄋ"; } if (input == "x") { output = "ㄌ"; } if (input == "e") { output = "ㄍ"; }
+            if (input == "d") { output = "ㄎ"; } if (input == "c") { output = "ㄏ"; } if (input == "r") { output = "ㄐ"; }
+            if (input == "f") { output = "ㄑ"; } if (input == "v") { output = "ㄒ"; } if (input == "5") { output = "ㄓ"; }
+            if (input == "t") { output = "ㄔ"; } if (input == "g") { output = "ㄕ"; } if (input == "b") { output = "ㄖ"; }
+            if (input == "y") { output = "ㄗ"; } if (input == "h") { output = "ㄘ"; } if (input == "n") { output = "ㄙ"; }
+            if (input == "u") { output = "ㄧ"; } if (input == "j") { output = "ㄨ"; } if (input == "m") { output = "ㄩ"; }
+            if (input == "8") { output = "ㄚ"; } if (input == "i") { output = "ㄛ"; } if (input == "k") { output = "ㄜ"; }
+            if (input == ",") { output = "ㄝ"; } if (input == "9") { output = "ㄞ"; } if (input == "o") { output = "ㄟ"; }
+            if (input == "l") { output = "ㄠ"; } if (input == ".") { output = "ㄡ"; } if (input == "0") { output = "ㄢ"; }
+            if (input == "p") { output = "ㄣ"; } if (input == ";") { output = "ㄤ"; } if (input == "/") { output = "ㄥ"; }
+            if (input == "-") { output = "ㄦ"; }
+            if (input == "7") { output = "˙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }
+            if (input == "6") { output = "ˊ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }
+            if (input == "3") { output = "ˇ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }
+            if (input == "4") { output = "ˋ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }
+            if (input == " ") { output = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }
+            return output;
+        }
+        /*
+        function keying_simulator(original)
+        {
+            document.getElementById("test_info").innerHTML = "step1";
+            document.getElementById('sim_keying_board').focus();
+            var e = jQuery.Event("keyup");
+            document.getElementById("test_info").innerHTML = "step2";
+            e.which = 68; //enter key
+            $("input").trigger("select");
+            $("input").trigger(e);
+            jQuery("input").trigger(e);
+            document.getElementById("test_info").innerHTML = "step3";
+        }
+        */
+    </script>
+<title>Bopomofo translator</title>
+</head>
+<body style="background-color: black; color:white">
+    <div align="center">Bopomofo translator</div>
+<!--input-->
+    <hr/>
+    <h2 style="color:yellow">輸入原始亂碼</h2>
+    <input type="text" id="original" name="original" value="" onKeyPress="translate(original)">
+    <input type="button" onclick="translate(original)" VALUE="轉換">
+    <!--<input type="button" onclick="keying_simulator(original)" VALUE="模擬輸入">-->
+    </center></div>
+<!--output-->
+    <hr/>
+    <h2 style="color:yellow">轉換結果</h2>
+    <p id="output" style="font-size:20px;"></p>
+<!--keying simulator (only arraivable in VB version now)-->
+    <!-- 
+    <hr/>
+    <h2 style="color:yellow">模擬輸入</h2>
+    <input type="text" id="sim_keying_board" name="sim_keying_board" value="" onKeyPress="transform(event)">
+    -->
+<!--test info-->
+    </br></br></br></br><p id="test_info" style="font-size:20px;"></p>
+</body>
+</html>
