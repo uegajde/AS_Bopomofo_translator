@@ -1,22 +1,21 @@
 <html>
+
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles.css">
     <script type="text/javascript">
-        function translate(original, channl)
-        {
+        function translate(original, channl) {
             var input = original.value.toLowerCase();
             var output = "";
             var input_unit;
-            for (var i = 0; i < input.length; i++)
-            {
+            for (var i = 0; i < input.length; i++) {
                 input_unit = input.substr(i, 1);
                 output = output + translate_core(input_unit);
             }
             document.getElementById("output").innerHTML = output;
             return true;
         }
-        function translate_core(input)
-        {
+        function translate_core(input) {
             var output = input;
             if (input == "1") { output = "ㄅ"; } if (input == "q") { output = "ㄆ"; } if (input == "a") { output = "ㄇ"; }
             if (input == "z") { output = "ㄈ"; } if (input == "2") { output = "ㄉ"; } if (input == "w") { output = "ㄊ"; }
@@ -39,28 +38,32 @@
             return output;
         }
     </script>
-<title>Bopomofo translator</title>
+    <title>注音亂碼解讀工具</title>
 </head>
-<body style="background-color: black; color:white">
-    <div align="center">Bopomofo translator</div>
-<!--input-->
-    <hr/>
-    <h2 style="color:yellow">輸入原始亂碼</h2>
-    <input type="text" id="original" name="original" value="" onKeyPress="translate(original)">
-    <input type="button" onclick="translate(original)" VALUE="轉換">
-    <!--<input type="button" onclick="keying_simulator(original)" VALUE="模擬輸入">-->
-    </center></div>
-<!--output-->
-    <hr/>
-    <h2 style="color:yellow">轉換結果</h2>
+
+<body>
+    <header>注音亂碼解讀工具</header>
+    <!--input-->
+    <hr />
+    <h2>輸入區</h2>
+    <textarea id="original" name="original" value="" onKeyPress="translate(original)"></textarea>
+    <!--output-->
+    <br><br>
+    <h2>轉換結果</h2>
+    <input type="button" onclick="translate(original)" value="轉換">
     <p id="output" style="font-size:20px;"></p>
-<!--keying simulator (only arraivable in VB version now)-->
-    <!-- 
-    <hr/>
-    <h2 style="color:yellow">模擬輸入</h2>
-    <input type="text" id="sim_keying_board" name="sim_keying_board" value="" onKeyPress="transform(event)">
-    -->
-<!--test info-->
-    </br></br></br></br><p id="test_info" style="font-size:20px;"></p>
+    <!--keydown simulator-->
+    <h2>模擬輸入 (未完成)</h2>
+    <input type="button" id="simInputBtn" name="simInputBtn" value="模擬輸入" onKeyPress="keydownMain(original)">
+    <br>
+    <textarea id="simInputArea" name="simInputArea" value=""></textarea>
+    <script type="text/javascript">
+    </script>
+    <!--author info-->
+    <p id="author_info">
+        注音亂碼解讀工具, ZH Lin, Licensed under the MIT license.
+        <a href="https://github.com/uegajde/LZ_Bopomofo_translator">Github repo</a>
+    </p>
 </body>
+
 </html>

@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(15, 15, 15);
+    color: rgb(230, 230, 230);
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+header {
+    color: rgb(250, 250, 220);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 18px;
+    color: rgb(70, 200, 140);
+    margin: 0;
+}
+
+textarea {
+    height: 125px;
+    color: rgb(220, 220, 220);
+    background-color: rgb(30, 30, 30);
+    border: none;
+    overflow: scroll;
+}
+
+input {
+    color: rgb(255, 255, 255);
+    background-color: rgb(30, 70, 50);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+}
+
+#output {
+    height: 125px;
+    overflow: scroll;
+}
