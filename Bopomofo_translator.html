@@ -1,7 +1,6 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
         function translate(original, channl)
         {
@@ -39,20 +38,6 @@
             if (input == " ") { output = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }
             return output;
         }
-        /*
-        function keying_simulator(original)
-        {
-            document.getElementById("test_info").innerHTML = "step1";
-            document.getElementById('sim_keying_board').focus();
-            var e = jQuery.Event("keyup");
-            document.getElementById("test_info").innerHTML = "step2";
-            e.which = 68; //enter key
-            $("input").trigger("select");
-            $("input").trigger(e);
-            jQuery("input").trigger(e);
-            document.getElementById("test_info").innerHTML = "step3";
-        }
-        */
     </script>
 <title>Bopomofo translator</title>
 </head>
