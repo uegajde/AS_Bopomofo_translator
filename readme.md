@@ -1,5 +1,5 @@
 # 注音亂碼解讀工具 / Bopomofo_translator
-直接在Github Pages使用/ use in Github Pages: http://uegajde.github.io/Bopomofo_translator/
+直接在Github Pages使用/ use in Github Pages: https://uegajde.github.io/Bopomofo_translator/
 
 這是一個將因為忘記切換注音輸入法而產生的亂碼，轉換回注音的小工具  
 但我清楚更多時候是有人有些想分享但又不好意思講的話，所以故意不切換輸入法以打成亂碼  
